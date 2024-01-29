@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "f065666b-2a70-47c0-b5a3-ca4384bbe9c3",
+		"name": "microservices-ha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27812956"
+	},
+	"item": [
+		{
+			"name": "sensor",
+			"item": [
+				{
+					"name": "Add Sensor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Test Sensor\",\r\n  \"location\": \"Room 101\",\r\n  \"isActive\": false,\r\n  \"sensorType\": \"INDOOR\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sensor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sensor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Sensors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sensor",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sensor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sensor by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sensor/{{sensorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sensor",
+								"{{sensorId}}"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sensor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Updated-Sensor-PUT\",\r\n  \"location\": \"Room 101\",\r\n  \"isActive\": true,\r\n  \"sensorType\": \"TEMPERATURE\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sensor/{{sensorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sensor",
+								"{{sensorId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sensor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sensor/{{sensorId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sensor",
+								"{{sensorId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "measurement",
+			"item": [
+				{
+					"name": "Add Measurement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sensorID\": 1,\r\n  \"timestamp\": \"2023-12-22T15:30:00\",\r\n  \"temperature\": 22.5,\r\n  \"humidity\": 45.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/measurement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"measurement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Measurements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/measurement",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"measurement"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Measurement by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/measurement/{{measurementId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"measurement",
+								"{{measurementId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Measurement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sensorID\": 1,\r\n  \"timestamp\": \"2023-12-22T15:30:00\",\r\n  \"temperature\": 24.5,\r\n  \"humidity\": 45.0\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/measurement/{{measurementId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"measurement",
+								"{{measurementId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Measurement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/measurement/{{measurementId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"measurement",
+								"{{measurementId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
